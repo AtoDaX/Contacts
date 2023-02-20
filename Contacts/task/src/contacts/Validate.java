@@ -13,12 +13,12 @@ public class Validate {
     }
     public static String formatPhone (String phoneNumber) {
         try {
-            if (isNotValid(phoneNumber)) {
+            if (!isNotValid(phoneNumber)) {
                 throw new InputValidationException("Wrong number format!");
             }
             return phoneNumber;
         } catch (InputValidationException e) {
-            //System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
             return "[no number]";
         }
     }
@@ -36,7 +36,7 @@ public class Validate {
                 throw new InputValidationException("Invalid id!");
             return true;
         } catch (InputValidationException e) {
-            //System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -46,16 +46,18 @@ public class Validate {
             LocalDate.parse(date);
             return date;
         } catch (Exception e){
-            //System.out.println("Bad birth date!");
+            System.out.println("Invalid birth date!");
             return "[no data]";
         }
     }
 
     public static String formatGender(String gender){
         gender = gender.toUpperCase();
+
         if (gender.equals("M")||gender.equals("F")){
             return gender;
         }else {
+            System.out.println("Invalid gender!");
             return "[no data]";
         }
     }

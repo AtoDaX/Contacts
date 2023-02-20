@@ -11,11 +11,11 @@ public class OrganizationContact extends AbstractContact{
     OrganizationContact(Scanner scanner){
         super();
         isPerson = false;
-        System.out.println("Enter the organization name:");
+        System.out.print("Enter the organization name: ");
         name = scanner.nextLine();
-        System.out.println("Enter the address:");
+        System.out.print("Enter the address: ");
         address = scanner.nextLine();
-        System.out.println("Enter the number:");
+        System.out.print("Enter the number:");
         number = Validate.formatPhone(scanner.nextLine());
     }
     protected String getName(){

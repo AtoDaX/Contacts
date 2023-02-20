@@ -11,13 +11,7 @@ public class UserInterface {
     }
 
     public void start()  {
-        int n = 0;
         while (true) {
-            if (n!=0){
-                System.out.println("");
-
-            }
-            n+=1;
             System.out.print("[menu] Enter action (add, list, search, count, exit): ");
             String userCommand;
             if (scanner.hasNext()){
@@ -25,7 +19,6 @@ public class UserInterface {
             }else {
                 continue;
             }
-
 
             try {
                 process(userCommand);
@@ -40,41 +33,39 @@ public class UserInterface {
             case "add" -> {
                 Command addCommand = new AddCommand(this.phoneBook);
                 addCommand.execute();
-
+                System.out.println("");
             }
             case "remove" -> {
                 Command removeCommand = new RemoveCommand(this.phoneBook);
                 removeCommand.execute();
-
+                System.out.println("");
             }
             case "edit" -> {
                 Command editCommand = new EditCommand(this.phoneBook);
                 editCommand.execute();
-
+                System.out.println("");
             }
             case "list" -> {
                 Command infoCommand = new InfoCommand(this.phoneBook);
                 infoCommand.execute();
-
+                System.out.println("");
             }
             case "count" -> {
                 Command countCommand = new CountCommand(this.phoneBook);
                 countCommand.execute();
-
+                System.out.println("");
             }
             case "exit" -> {
                 Command exitCommand = new ExitCommand(this.phoneBook);
-
-
                 exitCommand.execute();
-
+                System.out.println("");
             }
             case "search" -> {
                 Command searchCommand = new SearchCommand(this.phoneBook);
                 searchCommand.execute();
-
+                System.out.println("");
             }
-            default -> System.out.println("");
+            default -> System.out.println("Invalid input! Try again.\n");
         }
     }
 }

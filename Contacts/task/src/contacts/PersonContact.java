@@ -14,15 +14,15 @@ public class PersonContact extends AbstractContact{
     PersonContact(Scanner scanner){
         super();
         isPerson = true;
-        System.out.println("Enter the name:");
+        System.out.print("Enter the name: ");
         name = Validate.formatName(scanner.nextLine());
-        System.out.println("Enter the surname:");
+        System.out.print("Enter the surname: ");
         surname = Validate.formatName(scanner.nextLine());
-        System.out.println("Enter the birth date:");
+        System.out.print("Enter the birth date: ");
         birthdate = Validate.formatDate(scanner.nextLine());
-        System.out.println("Enter the gender");
+        System.out.print("Enter the gender(M/F): ");
         gender = Validate.formatGender(scanner.nextLine());
-        System.out.println("Enter the number:");
+        System.out.print("Enter the number: ");
         number = Validate.formatPhone(scanner.nextLine());
     }
     protected String getName(){
